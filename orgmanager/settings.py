@@ -134,3 +134,6 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, REACT_BUILD_PATH, 'media')
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+GH_CLIENT_ID = os.environ.get('GH_CLIENT_ID', '')
+GH_CLIENT_SECRET = os.environ.get('GH_CLIENT_SECRET', '')
+GH_REDIRECT_URL = os.environ.get('GH_REDIRECT_URL', '')
