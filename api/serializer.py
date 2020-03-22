@@ -1,12 +1,8 @@
 from rest_framework import serializers
 from rest_framework_simplejwt.tokens import RefreshToken
-from django.conf import settings
 
-
+from api.models import User
 from api.util import verify_github_code, get_or_create_user
-
-
-User = settings.AUTH_USER_MODEL
 
 
 class AuthSerializer(serializers.Serializer):
@@ -27,3 +23,9 @@ class AuthSerializer(serializers.Serializer):
         data['access'] = str(refresh.access_token)
 
         return data
+
+
+class UserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ['username']
