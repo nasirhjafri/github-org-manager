@@ -1,26 +1,27 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import GitHubLogin from 'react-github-login';
+import Button from 'react-bootstrap/Button';
+import Spinner from 'react-bootstrap/Spinner';
+import { BrowserRouter as Router } from 'react-router-dom'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+import Routes from './routes'
+
+const onSuccess = response => console.log(response);
+const onFailure = response => console.error(response);
+
+
+class App extends React.Component {
+
+  render() {
+    return (
+        <Router>
+          <Routes />
+        </Router>
+    )
+  }
 }
 
 export default App;
