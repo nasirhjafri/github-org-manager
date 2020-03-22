@@ -30,4 +30,4 @@ def verify_github_code(code):
         'client_secret': client_secret,
         'redirect_uri': redirect_uri,
     }
-    return requests.post(GH_ACCESS_TOKEN_URL, data=data, headers=headers)
+    return requests.post(GH_ACCESS_TOKEN_URL, data=data, headers=headers).json()

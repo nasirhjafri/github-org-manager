@@ -1,6 +1,6 @@
 import React from 'react'
 import { Route, Switch, withRouter, Redirect } from 'react-router-dom'
-import GitHubLogin from "../components/GitHubLogin/GitHubLogin";
+import GHLogin from "../components/GHLogin/GHLogin";
 
 
 class Routes extends React.PureComponent {
@@ -8,7 +8,7 @@ class Routes extends React.PureComponent {
         return (
             <div>
                 <Switch>
-                    <Route exact path="/" render={(props) => <GitHubLogin  {...props}/>}  />
+                    <Route exact path="/" render={(props) => <GHLogin  {...props}/>}  />
                 </Switch>
             </div>
         )

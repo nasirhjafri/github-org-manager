@@ -1,5 +1,5 @@
 import axios from '../../api'
 
-export function loginUser() {
-    return axios.get('auth')
+export function loginUser(payload) {
+    return axios.post('auth/login/', payload)
 }
