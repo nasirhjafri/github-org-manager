@@ -1,3 +1,6 @@
-from django.db import models
+from django.contrib.auth import models
+from django.db.models import TextField
 
-# Create your models here.
+
+class User(models.AbstractUser):
+    access_token = TextField()
